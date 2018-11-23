@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: the悠寂
 subtitle:
-description:
+description: 狂风满野，山泉泛生白雾，悠寂的长夜，豹虎在林间号叫而奔窜。
 keywords:
-author: John Doe
-language:
+author: bingke
+language: zh-CN
 timezone:
 
 # URL
@@ -78,6 +78,37 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
+- type: git
   repository: https://github.com/bingke/bingke.github.io.git
   branch: master
+- type: leancloud_counter_security_sync
+
+leancloud_counter_security:
+  enable_sync: true
+  app_id: eX0voJ7FkQ1lRfbAM7WayfCa-gzGzoHsz
+  app_key: 56j1ybrhvC0tU4vSemayPpWu
+  username: 
+  password:
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+
+live2d:
+  enable: true
+  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  tagMode: false
+  debug: false
+  model:
+    use: live2d-widget-model-wanko
+  display:
+    position: right
+    width: 150
+    height: 300
+  mobile:
+    show: true

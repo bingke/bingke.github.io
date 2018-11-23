@@ -43,7 +43,7 @@
   #}{% if theme.footer.powered.version %} v{{ hexo_env('version') }}{% endif %}{#
  #}</div>
 {% endif %}
-
+<!--
 {% if theme.footer.powered.enable and theme.footer.theme.enable %}
   <span class="post-meta-divider">|</span>
 {% endif %}
@@ -59,4 +59,5 @@
   <div class="footer-custom">{#
   #}{{ theme.footer.custom_text }}{#
 #}</div>
+-->
 {% endif %}
