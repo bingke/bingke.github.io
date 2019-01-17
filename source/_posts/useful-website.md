@@ -28,3 +28,10 @@ tags:
 【工具】[「盘多多」](http://www.panduoduo.net/)百度云资源搜索。
 
 【工具】[「如何用 macOS 优雅的敲 LaTeX」](https://www.jianshu.com/p/b1e3b029ded5)
+
+【工具】[「《17天搞定GRE单词》背单词时间计划表制作」](http://www.exam4.us/)可以用来安排背单词和复习单词的时间，还可以打印。
+
+【机器学习】[「机器学习——低秩矩阵分解中低秩的意义、矩阵填补、交叉验证」](https://blog.csdn.net/manduner/article/details/80564414)
+
+【工具】[如何在印象笔记中插入数学符号](https://www.zhihu.com/question/23383538/answer/107176693)
+ s
