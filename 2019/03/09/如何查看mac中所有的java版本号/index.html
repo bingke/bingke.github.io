@@ -119,18 +119,18 @@
 
 
 
-  <meta name="description" content="在mac环境下，安装完多个JDK版本后，如何查看JDK的版本号？打开终端，输入命令： 1$ /usr/libexec/java_home -V 可以获得如下显示： 123Matching Java Virtual Machines (2):   11.0.2, x86_64:	&amp;quot;Java SE 11.0.2&amp;quot;	/Library/Java/JavaVirtualMachines/">
+  <meta name="description" content="在mac环境下，安装完多个JDK版本后，如何查看JDK的版本号？打开终端，输入命令： 1$ /usr/libexec/java_home -V 可以获得如下显示： 123Matching Java Virtual Machines (2):   11.0.2, x86_64:	&quot;Java SE 11.0.2&quot;	/Library/Java/JavaVirtualMachines/jdk-11.0.2">
 <meta name="keywords" content="java,tip">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何查看mac中所有的java版本号">
 <meta property="og:url" content="http://yoursite.com/2019/03/09/如何查看mac中所有的java版本号/index.html">
 <meta property="og:site_name" content="the悠寂">
-<meta property="og:description" content="在mac环境下，安装完多个JDK版本后，如何查看JDK的版本号？打开终端，输入命令： 1$ /usr/libexec/java_home -V 可以获得如下显示： 123Matching Java Virtual Machines (2):   11.0.2, x86_64:	&amp;quot;Java SE 11.0.2&amp;quot;	/Library/Java/JavaVirtualMachines/">
+<meta property="og:description" content="在mac环境下，安装完多个JDK版本后，如何查看JDK的版本号？打开终端，输入命令： 1$ /usr/libexec/java_home -V 可以获得如下显示： 123Matching Java Virtual Machines (2):   11.0.2, x86_64:	&quot;Java SE 11.0.2&quot;	/Library/Java/JavaVirtualMachines/jdk-11.0.2">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-09T08:46:11.862Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何查看mac中所有的java版本号">
-<meta name="twitter:description" content="在mac环境下，安装完多个JDK版本后，如何查看JDK的版本号？打开终端，输入命令： 1$ /usr/libexec/java_home -V 可以获得如下显示： 123Matching Java Virtual Machines (2):   11.0.2, x86_64:	&amp;quot;Java SE 11.0.2&amp;quot;	/Library/Java/JavaVirtualMachines/">
+<meta name="twitter:description" content="在mac环境下，安装完多个JDK版本后，如何查看JDK的版本号？打开终端，输入命令： 1$ /usr/libexec/java_home -V 可以获得如下显示： 123Matching Java Virtual Machines (2):   11.0.2, x86_64:	&quot;Java SE 11.0.2&quot;	/Library/Java/JavaVirtualMachines/jdk-11.0.2">
 
 
 
@@ -485,9 +485,9 @@
 
       
         <p>在mac环境下，安装完多个JDK版本后，如何查看JDK的版本号？<br>打开终端，输入命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/libexec/java_home -V</span><br></pre></td></tr></table></figure>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/libexec/jav<span class="built_in">a_home</span> -V</span><br></pre></td></tr></table></figure>
 <p>可以获得如下显示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Matching Java Virtual Machines (2):</span><br><span class="line">   11.0.2, x86_64:	&quot;Java SE 11.0.2&quot;	/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home</span><br><span class="line">   1.8.0_201, x86_64:	&quot;Java SE 8&quot;	/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home</span><br></pre></td></tr></table></figure>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Matching Java Virtual Machines (<span class="number">2</span>):</span><br><span class="line">   <span class="number">11.0</span><span class="number">.2</span>, <span class="string">x86_64:</span>	<span class="string">"Java SE 11.0.2"</span>	<span class="regexp">/Library/</span>Java<span class="regexp">/JavaVirtualMachines/</span>jdk<span class="number">-11.0</span><span class="number">.2</span>.jdk<span class="regexp">/Contents/</span>Home</span><br><span class="line">   <span class="number">1.8</span><span class="number">.0</span>_201, <span class="string">x86_64:</span>	<span class="string">"Java SE 8"</span>	<span class="regexp">/Library/</span>Java<span class="regexp">/JavaVirtualMachines/</span>jdk1<span class="number">.8</span><span class="number">.0</span>_201.jdk<span class="regexp">/Contents/</span>Home</span><br></pre></td></tr></table></figure>
       
     </div>
 
