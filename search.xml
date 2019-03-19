@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hadoop中DataNode没有启动解决办法]]></title>
+    <url>%2F2019%2F03%2F19%2FHadoop%E4%B8%ADDataNode%E6%B2%A1%E6%9C%89%E5%90%AF%E5%8A%A8%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[解决Hadoop集群启动时，只有DataNode没有启动解决的问题。 当使用如下命令后，用jps查看发现，DataNode去哪里啦？ 1$ ./start-all.sh DataNode不见了的罪证： 1234555680 SecondaryNameNode55794 ResourceManager55924 Jps55496 NameNode55884 NodeManager 因为在开始启动的时候，6项进程都在，我也没有对配置文件进行过修改。后来查到是因为使用了如下命令导致的。每一次format,namenode都会生成新的clusterID , 而datanode还是保持原来的clusterID。 1$ hadoop namenode -format 我使用的解决方案：第一步： 1cat hadoop-2.7.7/XXXX/dfs/name/current/VERSION 然后复制namenode的clusterID。注：XXXX为在core-site.xml创建的存放临时数据的文件夹名称。 第二步：用该clusterID把所有datanode节点机器中目录为hadoop-2.7.7/XXXX/dfs/data/current/VERSION中的clusterID替换掉。 Credit:https://blog.csdn.net/u013129944/article/details/78604651]]></content>
+      <tags>
+        <tag>hadoop</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hadoop集群启动但不能访问50070]]></title>
     <url>%2F2019%2F03%2F19%2Fhadoop%E9%9B%86%E7%BE%A4%E5%90%AF%E5%8A%A8%E4%BD%86%E4%B8%8D%E8%83%BD%E8%AE%BF%E9%97%AE50070%2F</url>
     <content type="text"><![CDATA[最近又双叒叕搭hadoop的环境。我的问题是集群启动后，仍然无法使用localhost：50070访问结点信息。后来发现NameNode压根没起来，昨天用jps查看到的都是假象。 说正事。 首先，使用如下命令，查看是否所有进程都运行成功： 1$ jps 成功的状态如下显示： 1234549697 NameNode49777 DataNode50116 Jps49877 SecondaryNameNode50076 NodeManager 如果你成功了，请打开你的【谷歌】浏览器，访问localhost:50070就能成功了。为什么要用谷歌？因为我在查解决方案的时候，发现其中一个老兄用【ie】浏览器试了一天没成功，结果换成GoogleChrome浏览器问题解决。 如果你没成功，可以看一下控制台的报错信息。我的问题是hdfs-site.xml文件中，有一个设置错误。报错信息如下： 12345678919/03/19 16:01:02 WARN namenode.NameNode: Encountered exception during format:java.io.IOException: Cannot create directory /User/****/*****/hadoop-2.7.7/tmp/dfs/name/current at org.apache.hadoop.hdfs.server.common.Storage$StorageDirectory.clearDirectory(Storage.java:337) at org.apache.hadoop.hdfs.server.namenode.NNStorage.format(NNStorage.java:564) at org.apache.hadoop.hdfs.server.namenode.NNStorage.format(NNStorage.java:585) at org.apache.hadoop.hdfs.server.namenode.FSImage.format(FSImage.java:179) at org.apache.hadoop.hdfs.server.namenode.NameNode.format(NameNode.java:1015) at org.apache.hadoop.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:1457) at org.apache.hadoop.hdfs.server.namenode.NameNode.main(NameNode.java:1582) 噫，这个路径看起来很出戏。原来是因为在~/hadoop-2.7.7/etc/hdfs-site.xml中的属性中，配置了一个不存在的路径。修改的地方如下： 12345&lt;!--把路径vlaue换成本地的name所在位置--&gt;&lt;property&gt; &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt; &lt;value&gt;/Users/*****/hadoop-2.7.7/tmp/dfs/name&lt;/value&gt;&lt;/property&gt; 修改后，保存。重新使用命令 12$ ./start-dfs.sh$ ./start-yarn.sh 集群成功启动。再次用浏览器访问。搞定！]]></content>
