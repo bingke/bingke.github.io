@@ -34,4 +34,7 @@ tags:
 【机器学习】[「机器学习——低秩矩阵分解中低秩的意义、矩阵填补、交叉验证」](https://blog.csdn.net/manduner/article/details/80564414)
 
 【工具】[如何在印象笔记中插入数学符号](https://www.zhihu.com/question/23383538/answer/107176693)
- s
+ 
+【有趣】[人口密度3D图Human Terrain](https://pudding.cool/2018/10/city_3d/) 好震撼。
+
+【工具】[打造MacOS版“XShell”](https://www.jianshu.com/p/ca459e1ab52d) 
